@@ -67,3 +67,22 @@ function showSidebar(){
           behavior: 'smooth'
       });
   });
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+  
+    const handleScroll = () => {
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          section.style.opacity = "1";
+          section.style.transform = "translateY(0)";
+        } else {
+          section.style.opacity = "0"; // Optional: Remove if fade-in should happen only once
+          section.style.transform = "translateY(20px)"; // Optional
+        }
+      });
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger on page load
+  });
