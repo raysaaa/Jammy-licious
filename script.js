@@ -77,12 +77,12 @@ function showSidebar(){
           section.style.opacity = "1";
           section.style.transform = "translateY(0)";
         } else {
-          section.style.opacity = "0"; // Optional: Remove if fade-in should happen only once
-          section.style.transform = "translateY(20px)"; // Optional
+          section.style.opacity = "0"; 
+          section.style.transform = "translateY(20px)"; 
         }
       });
     };
   
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Trigger on page load
+    handleScroll(); 
   });
